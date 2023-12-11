@@ -1,0 +1,118 @@
+Q1. Given an array of integers, write a Java program to find and print all the duplicate elements.
+ 
+package mock_Programs;
+
+public class Duplicate_Elements {
+
+	public static void main(String[] args) {
+		//Initializing an integer array
+		int numbers[]= new int[] {1,3,3,5,5,6};
+		
+		System.out.println("Duplicate elements in the given array are:");
+		
+		for(int i=0;i<numbers.length;i++) {
+			for(int j=i+1;j<numbers.length;j++) {
+				
+				//comparing each element
+				if(numbers[i]==numbers[j]) {
+					
+					//printing the duplicate elements of array
+					System.out.println(numbers[j]);	
+				}
+			}
+		}
+	}
+}
+Output:
+Duplicate elements in the given array are:
+3
+5
+
+Q2. Write a Java function to check if two strings are anagrams of each other.
+
+package mock_Programs;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Check_Anagram {
+
+	public static void main(String[] args) {
+		checkAnagram();
+	}
+
+	private static void checkAnagram() {
+		//taking two strings from user 
+				Scanner sc=new Scanner(System.in);
+				System.out.println("Enter first string:");
+				String str1=sc.next().toLowerCase();
+				System.out.println("Enter second string:");
+				String str2=sc.next().toLowerCase();
+				
+				//checking the length of string
+				if(str1.length()!=str2.length()) {
+					System.out.println("Both strings are not anagram.");
+					
+				}else {
+					//converting the strings into character array
+					char string1[]=str1.toCharArray();
+					char string2[]=str2.toCharArray();
+					
+					//sorting the arrays using sort() method
+					Arrays.sort(string1);
+					Arrays.sort(string2);
+					
+					//comparing both the arrays using equals() method
+					if(Arrays.equals(string1, string2)==true) {
+						System.out.println("Both the strings are anagram");
+					}else {
+						System.out.println("Bothe the srings are not anagram");
+					}
+					sc.close();
+				}	
+	}
+}
+Output:
+Enter first string:
+Keep
+Enter second string:
+Peek
+Both the strings are anagram
+
+
+Q3. Write a Java program to print a right-angled triangle of stars. The number of rows should be taken as input.
+
+package mock_Programs;
+
+import java.util.Scanner;
+
+public class Pattern {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter rows to print right angled triangle:");
+		//taking number of rows from user
+		int row=sc.nextInt();
+		
+		//outer loop for rows
+		for(int i=1;i<=row;i++) {
+			
+			//inner loop for columns
+			for(int j=1;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+		sc.close();
+	}
+}
+Output:
+Enter rows to print right angled triangle:
+5
+*
+**
+***
+****
+*****
+
